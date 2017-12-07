@@ -288,8 +288,7 @@ class MarvinConfig(object):
     def _checkConfig(self):
         ''' Check the config '''
         # set and sort the base MPL dictionary
-        mpldict = {'MPL-6': ('v2_3_1', '2.1'),
-                   'MPL-5': ('v2_0_1', '2.0.2'),
+        mpldict = {'MPL-5': ('v2_0_1', '2.0.2'),
                    'MPL-4': ('v1_5_1', '1.1.1'),
                    'MPL-3': ('v1_3_3', 'v1_0_0'),
                    'MPL-2': ('v1_2_0', None),
@@ -479,6 +478,11 @@ if not marvindir:
 
 # Inits the URL Route Map
 from marvin.api.api import Interaction
-config.sasurl = 'https://api.sdss.org/marvin2/'
+config.sasurl = 'https://api.sdss.org/test/marvin2/'
 
 from marvin.api.base import arg_validate
+
+
+warnings.warn('THIS IS A PRE-RELEASE OF MARVIN!!! Some funcionality will '
+              'probably be broken. Remember to upgrade to the stable version '
+              'when it gets released.', MarvinUserWarning)
